@@ -43,7 +43,7 @@ generateBtn.addEventListener('click',
             offerLabel.innerHTML = 'Biglietto Standard'
         }
 
-        carriageLabel.innerHTML = Math.floor(Math.random() * 11);
+        carriageLabel.innerHTML = Math.floor(Math.random() * 10) +1;
         CPcodeLabel.innerHTML = Math.floor(Math.random() * 10001);
         priceLabel.innerHTML = `${price.toFixed(2)} &euro;`
     }
