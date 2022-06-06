@@ -6,6 +6,7 @@ const offerLabel = document.getElementById('ticket-offer');
 const carriageLabel = document.getElementById('ticket-carriage');
 const CPcodeLabel = document.getElementById('ticket-CPCode');
 const priceLabel = document.getElementById('ticket-price');
+const ticketSection = document.querySelector('.ticket-output');
 
 const euroPerKm = 0.21;
 const childDiscount = 0.2;
@@ -46,7 +47,15 @@ generateBtn.addEventListener('click',
         carriageLabel.innerHTML = Math.floor(Math.random() * 10) +1;
         CPcodeLabel.innerHTML = Math.floor(Math.random() * 10001);
         priceLabel.innerHTML = `${price.toFixed(2)} &euro;`
+        ticketSection.classList.add('active');
     }
 );
 
+undoBtn.addEventListener('click',
+function(){
+    document.getElementById('ticket-name').value = '';
+    userKm = document.getElementById('ticket-km').value = '';
+    userAge = document.getElementById('ticket-age').value = '';
+    ticketSection.classList.remove('active');
+});
 //

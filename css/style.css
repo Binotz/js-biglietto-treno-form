@@ -62,11 +62,23 @@ h2{
     text-align: center;
 }
 
-/* Utils */
-.active{
-    display: block;
+/* Ticket output */
+.your-ticket-layout{
+    background-color: white;
+    padding: 2rem;
+}
+.ticket-layout{
+    display: flex;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
+
+/* Utils */
 .ticket-output{
-    /* display: none; */
+    display: none;
+}
+.ticket-output.active{
+    display: block;
 }
