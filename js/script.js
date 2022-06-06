@@ -1,6 +1,12 @@
 //vars setup
 const generateBtn = document.getElementById('btn-generate');
 const undoBtn = document.getElementById('btn-undo');
+const nameLabel = document.getElementById('passenger-name');
+const offerLabel = document.getElementById('ticket-offer');
+const carriageLabel = document.getElementById('ticket-carriage');
+const CPcodeLabel = document.getElementById('ticket-CPCode');
+const priceLabel = document.getElementById('ticket-price');
+
 const euroPerKm = 0.21;
 const childDiscount = 0.2;
 const elderDiscount = 0.4;
@@ -15,7 +21,6 @@ generateBtn.addEventListener('click',
         userName = document.getElementById('ticket-name').value;
         userKm = document.getElementById('ticket-km').value;
         userAge = document.getElementById('ticket-age').value;
-        console.log(userName, userKm, userAge);
         
         // price calc
         price = euroPerKm * userKm;
@@ -24,11 +29,24 @@ generateBtn.addEventListener('click',
         } else if(userAge ==='over'){
             price -= price * elderDiscount;
         }
+
         console.log(`Prezzo biglietto per ${userAge} è di ${price}`);
 
+        // Output
+        nameLabel.innerHTML = userName;
+        
+        if (userAge === 'minorenne'){
+            offerLabel.innerHTML ='Biglietto Minorenne'
+        } else if(userAge === 'over'){
+            offerLabel.innerHTML = 'Biglietto Over65'
+        } else{
+            offerLabel.innerHTML = 'Biglietto Standard'
+        }
 
+        carriageLabel.innerHTML = Math.floor(Math.random() * 11);
+        CPcodeLabel.innerHTML = Math.floor(Math.random() * 10001);
+        priceLabel.innerHTML = `${price.toFixed(2)} &euro;`
     }
 );
-console.log(userName);
 
 //
