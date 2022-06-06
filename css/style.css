@@ -8,7 +8,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 /* Common */
 body{
     background-color: var(--main-color);
@@ -19,7 +18,10 @@ h2{
     text-transform: uppercase;
     padding: 2rem;
 }
-
+.container{
+    max-width: 1500px;
+    margin: 0 auto;
+}
 /* Pseudo form */
 .ticket-input-form{
     background-color: white;
@@ -45,6 +47,9 @@ h2{
 .ticket-container input,
 .ticket-container select{
     text-align: center;
+    border-radius: 5px;
+    border: 0;
+    border: 1px solid var(--main-color); 
 }
 .ticket-btns button{
     border-width: 2px;
@@ -61,24 +66,70 @@ h2{
 .ticket-btns{
     text-align: center;
 }
-
+#ticket-age{
+    width: 100px;
+}
 /* Ticket output */
+.ticket-output h2{
+    padding-bottom: 0;
+}
 .your-ticket-layout{
     background-color: white;
     padding: 2rem;
 }
 .ticket-layout{
     display: flex;
+    justify-content: space-between;
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
-
-
+.ticket-layout > div{
+    padding: 1rem;
+}
+.ticket-layout h4{
+    margin-bottom: 3rem;
+}
+/* Passenger name */
+.passenger-details-layout{
+    background-color: #808080;
+    font-weight: bold;
+}
 /* Utils */
 .ticket-output{
     display: none;
 }
 .ticket-output.active{
     display: block;
+}
+
+/* MEDIA QUERIES*/
+@media screen and (max-width: 1201px) {
+    .ticket-container{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .ticket-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+        gap: 1rem;
+    }
+    .ticket-btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .ticket-layout{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ticket-layout > div{
+        width: 100%;
+        border-right: 1px solid black;
+    }
 }
